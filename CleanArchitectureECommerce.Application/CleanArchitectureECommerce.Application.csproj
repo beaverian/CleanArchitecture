@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArchitectureECommerce.Core\CleanArchitectureECommerce.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Products\" />
+    <None Remove="Dto\" />
+    <None Remove="Products\Queries\" />
+    <None Remove="Products\Commands\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Products\" />
+    <Folder Include="Dto\" />
+    <Folder Include="Products\Queries\" />
+    <Folder Include="Products\Commands\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
