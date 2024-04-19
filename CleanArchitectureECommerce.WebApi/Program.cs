@@ -8,6 +8,8 @@ using CleanArchitectureECommerce.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using CleanArchitectureECommerce.Application.Products.Queries;
 using MediatR;
+using CleanArchitectureECommerce.Application.Services;
+using CleanArchitectureECommerce.Common.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +26,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(typeof(GetProductByIdQuery).Assembly);
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddTransient<IProductService, ProductService>();
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 var app = builder.Build();
 

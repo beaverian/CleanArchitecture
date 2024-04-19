@@ -4,18 +4,8 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.Products.Commands
+namespace CleanArchitectureECommerce.Application.Products.Commands
 {
-    /// <summary>
-    /// Represents a command to update an existing product.
-    /// </summary>
-    public class UpdateProductCommand : IRequest<bool>
-    {
-        public int ProductId { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-    }
-
     /// <summary>
     /// Handles the UpdateProductCommand to update an existing product.
     /// </summary>
@@ -32,7 +22,7 @@ namespace CleanArchitecture.Application.Products.Commands
         {
             var product = new Product
             {
-                Id = request.ProductId,
+                Id = request.Id,
                 Name = request.Name,
                 Price = request.Price
             };

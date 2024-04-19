@@ -3,16 +3,8 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.Products.Commands
+namespace CleanArchitectureECommerce.Application.Products.Commands
 {
-    /// <summary>
-    /// Represents a command to delete a product by its ID.
-    /// </summary>
-    public class DeleteProductCommand : IRequest<bool>
-    {
-        public int ProductId { get; set; }
-    }
-
     /// <summary>
     /// Handles the DeleteProductCommand to delete a product by its ID.
     /// </summary>
@@ -33,7 +25,7 @@ namespace CleanArchitecture.Application.Products.Commands
         /// <returns>A boolean indicating whether the product was successfully deleted.</returns>
         public async Task<bool> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
         {
-            return await _productService.DeleteProductAsync(request.ProductId);
+            return await _productService.DeleteProductAsync(request.Id);
         }
     }
 }
