@@ -2,6 +2,7 @@
 using CleanArchitectureECommerce.Core.Interfaces;
 using CleanArchitectureECommerce.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -15,14 +16,17 @@ namespace CleanArchitectureECommerce.Infrastructure.Repositories
     public class ProductRepository : IProductRepository
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<ProductRepository> _logger;
 
         /// <summary>
-        /// Initializes a new instance of the ProductRepository with a given database context.
+        /// Initializes a new instance of the ProductRepository with a given database context and logger.
         /// </summary>
         /// <param name="context">The database context to be used for data operations.</param>
-        public ProductRepository(ApplicationDbContext context)
+        /// <param name="logger">The logger for logging messages within the repository.</param>
+        public ProductRepository(ApplicationDbContext context, ILogger<ProductRepository> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         /// <summary>
@@ -34,11 +38,12 @@ namespace CleanArchitectureECommerce.Infrastructure.Repositories
         {
             try
             {
+                _logger.LogInformation("Fetching product with ID {ProductId}", id);
                 return await _context.Products.FindAsync(id);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred when getting the product by ID: {ex.Message}");
+                _logger.LogError(ex, "An error occurred when getting the product by ID: {ProductId}", id);
                 throw;
             }
         }
@@ -51,11 +56,12 @@ namespace CleanArchitectureECommerce.Infrastructure.Repositories
         {
             try
             {
+                _logger.LogInformation("Retrieving all products from the database");
                 return await _context.Products.ToListAsync();
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred when getting all products: {ex.Message}");
+                _logger.LogError(ex, "An error occurred when getting all products");
                 throw;
             }
         }
@@ -69,12 +75,13 @@ namespace CleanArchitectureECommerce.Infrastructure.Repositories
         {
             try
             {
+                _logger.LogInformation("Adding a new product: {ProductName}", product.Name);
                 await _context.Products.AddAsync(product);
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred when adding a new product: {ex.Message}");
+                _logger.LogError(ex, "An error occurred when adding a new product: {ProductName}", product.Name);
                 throw;
             }
         }
@@ -88,12 +95,13 @@ namespace CleanArchitectureECommerce.Infrastructure.Repositories
         {
             try
             {
+                _logger.LogInformation("Updating product: {ProductId}", product.Id);
                 _context.Products.Update(product);
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred when updating the product: {ex.Message}");
+                _logger.LogError(ex, "An error occurred when updating the product: {ProductId}", product.Id);
                 throw;
             }
         }
@@ -107,12 +115,13 @@ namespace CleanArchitectureECommerce.Infrastructure.Repositories
         {
             try
             {
+                _logger.LogInformation("Deleting product: {ProductId}", product.Id);
                 _context.Products.Remove(product);
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred when deleting the product: {ex.Message}");
+                _logger.LogError(ex, "An error occurred when deleting the product: {ProductId}", product.Id);
                 throw;
             }
         }
