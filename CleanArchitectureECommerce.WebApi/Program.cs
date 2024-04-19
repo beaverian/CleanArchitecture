@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+using Serilog;
+using System;
 using CleanArchitectureECommerce.Infrastructure.Data;
 using CleanArchitectureECommerce.Core.Interfaces;
 using CleanArchitectureECommerce.Infrastructure.Repositories;
@@ -6,6 +10,12 @@ using CleanArchitectureECommerce.Application.Products.Queries;
 using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure Serilog
+builder.Host.UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration
+    .ReadFrom.Configuration(hostingContext.Configuration)
+    .WriteTo.Console()
+    .WriteTo.File("logs/myapp.txt", rollingInterval: RollingInterval.Day));
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
