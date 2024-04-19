@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureECommerce.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureECommerce.WebApi", "CleanArchitectureECommerce.WebApi\CleanArchitectureECommerce.WebApi.csproj", "{ECF58B1B-3C5B-4C5F-9B2E-FBD2D81B7979}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureECommerce.Application.Services", "CleanArchitectureECommerce.Application.Services\CleanArchitectureECommerce.Application.Services.csproj", "{A28C4B62-FCDC-49AC-B1A3-751CFCB8BB66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{ECF58B1B-3C5B-4C5F-9B2E-FBD2D81B7979}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECF58B1B-3C5B-4C5F-9B2E-FBD2D81B7979}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECF58B1B-3C5B-4C5F-9B2E-FBD2D81B7979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28C4B62-FCDC-49AC-B1A3-751CFCB8BB66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28C4B62-FCDC-49AC-B1A3-751CFCB8BB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28C4B62-FCDC-49AC-B1A3-751CFCB8BB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28C4B62-FCDC-49AC-B1A3-751CFCB8BB66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

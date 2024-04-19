@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CleanArchitectureECommerce.Core\CleanArchitectureECommerce.Core.csproj" />
+    <ProjectReference Include="..\CleanArchitectureECommerce.Application.Services\CleanArchitectureECommerce.Application.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
