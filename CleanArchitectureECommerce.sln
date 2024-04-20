@@ -13,13 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureECommerce.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureECommerce.Application.Services", "CleanArchitectureECommerce.Application.Services\CleanArchitectureECommerce.Application.Services.csproj", "{A28C4B62-FCDC-49AC-B1A3-751CFCB8BB66}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanArchitectureECommerce.ClientApp", "CleanArchitectureECommerce.ClientApp", "{D41D9F3C-1FBD-4DAA-8E57-AF12F78D2BDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F477C6BA-BD7E-4A76-944C-C8F31D5FB7D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -42,5 +41,8 @@ Global
 		{A28C4B62-FCDC-49AC-B1A3-751CFCB8BB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A28C4B62-FCDC-49AC-B1A3-751CFCB8BB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A28C4B62-FCDC-49AC-B1A3-751CFCB8BB66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

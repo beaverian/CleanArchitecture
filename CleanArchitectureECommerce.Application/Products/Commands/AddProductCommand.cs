@@ -1,7 +1,6 @@
-﻿using System;
-using MediatR;
+﻿using MediatR;
 
-namespace CleanArchitecture.Application.Products.Commands
+namespace CleanArchitectureECommerce.Application.Products.Commands
 {
     public class AddProductCommand : IRequest<int>
     {
@@ -9,5 +8,3 @@ namespace CleanArchitecture.Application.Products.Commands
         public decimal Price { get; set; }
     }
 }
-
-
