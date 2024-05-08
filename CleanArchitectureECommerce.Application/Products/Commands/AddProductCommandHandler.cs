@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using CleanArchitectureECommerce.Core.Entities;
 using CleanArchitectureECommerce.Application.Services;
-using CleanArchitecture.Application.Products.Commands;
+using CleanArchitectureECommerce.Application.Products.Commands;
 
 namespace CleanArchitectureECommerce.Application.Products.Commands
 {
